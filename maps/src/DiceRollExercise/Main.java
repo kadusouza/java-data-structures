@@ -2,9 +2,7 @@ package DiceRollExercise;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.random.RandomGenerator;
 
 /*
 This program simulates rolling a dice.
@@ -29,10 +27,13 @@ public class Main {
             rolls.put(result, count);
         }
         System.out.println(rolls);
+
+        for (Map.Entry<Integer, Integer> entry: rolls.entrySet()){
+            System.out.println("The number " + entry.getKey() + " was rolled " + entry.getValue() + " times." );
+        }
     }
 
     public static int rollDice() {
         return ThreadLocalRandom.current().nextInt(1, 7);
     }
-
 }
